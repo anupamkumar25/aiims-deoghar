@@ -59,6 +59,121 @@
             scroll-behavior: smooth;
         }
     </style>
+
+    <!-- For Carousel -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Swiper Container Styling */
+        .swiper {
+            width: 100%;
+            height: 70vh; /* Adjust height as needed */
+        }
+
+        .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This makes the image cover the slide area without distortion */
+        }
+
+        /* Black overlay for better text readability */
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Text content on the slide */
+        .slide-content {
+            position: absolute;
+            color: white;
+            text-align: left;
+            max-width: 800px;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            /* Animation for text */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+            /* Animation for text */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s; /* Delay this animation */
+        }
+        
+        /* Show text animation on active slide */
+        .swiper-slide-active .slide-content h2,
+        .swiper-slide-active .slide-content p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Navigation Arrows */
+        .swiper-button-next, .swiper-button-prev {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background-color: rgba(230, 33, 23, 0.8); /* AIIMS Red */
+        }
+        
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        /* Custom Pagination Dots */
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.7);
+            opacity: 1;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: #e62117; /* AIIMS Red */
+        }
+    </style>
+
 </head>
 <body class="bg-gray-50 font-sans antialiased">
 
@@ -103,7 +218,7 @@
 
                 <div class="flex-shrink-0">
                     <a href="/">
-                     <img class="h-16" src=Vite::asset{"/resources/images/aiims.png"} alt="AIIMS Deoghar Logo">
+                     <img class="h-16" src="/images/aiims.png" alt="AIIMS Deoghar Logo">
                      </a>
                 </div>
 

@@ -5,7 +5,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-slider relative overflow-hidden">
+<!-- <section class="hero-slider relative overflow-hidden">
     <div class="container mx-auto px-4 py-20">
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -25,7 +25,81 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
+<div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            
+            <script>
+                function createSlideContent() {
+                    return `
+                        <div class="slide-content">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-item">
+                                अखिल भारतीय आयुर्विज्ञान संस्थान देवघर
+                            </h1>
+                            <h2 class="text-2xl md:text-3xl font-semibold mb-8 animated-item">
+                                ALL INDIA INSTITUTE OF MEDICAL SCIENCES DEOGHAR
+                            </h2>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center button-group animated-item">
+                                <a href="https://ors.gov.in/orsportal/selectAppointment" target="_blank" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                    Online Registration System
+                                </a>
+                                <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html" target="_blank" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                                    Lab Report
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }
+            </script>
+
+            <div class="swiper-slide">
+                <img src="/images/aiims1.jpg" alt="AIIMS Building">
+                <div class="slide-overlay"></div>
+                <script>document.write(createSlideContent())</script>
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/aiims2.jpg" alt="AIIMS Auditorium">
+                <div class="slide-overlay"></div>
+                <script>document.write(createSlideContent())</script>
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/aiims3.jpg" alt="Medical Professionals">
+                <div class="slide-overlay"></div>
+                <script>document.write(createSlideContent())</script>
+            </div>
+        </div>
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
+        autoplay: {
+          delay: 5000, // Increased delay for more content
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
 
 <!-- Statistics Section -->
 <section class="py-16 bg-gray-50">
