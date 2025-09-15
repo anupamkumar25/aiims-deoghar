@@ -60,12 +60,14 @@
         }
     </style>
 
-    <!-- For Carousel -->
+    <!-------------------------------- For Carousel ----------------------------------->
+
+
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <style>
+     <style>
         /* Basic Styling */
         body {
             font-family: Arial, sans-serif;
@@ -76,7 +78,7 @@
         /* Swiper Container Styling */
         .swiper {
             width: 100%;
-            height: 70vh; /* Adjust height as needed */
+            height: 55vh; /* Increased height for more content */
         }
 
         .swiper-slide {
@@ -90,11 +92,15 @@
             overflow: hidden;
         }
 
+        .slide-content h1{
+            color: #e62117;
+        }
+
         .swiper-slide img {
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* This makes the image cover the slide area without distortion */
+            object-fit: cover;
         }
 
         /* Black overlay for better text readability */
@@ -104,40 +110,36 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5); /* Slightly darker for better contrast */
         }
 
         /* Text content on the slide */
         .slide-content {
             position: absolute;
-            color: white;
-            text-align: left;
-            max-width: 800px;
-            padding: 20px;
             z-index: 10;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 90%;
         }
 
-        .slide-content h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            /* Animation for text */
+        /* Shared animation class */
+        .animated-item {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .slide-content p {
-            font-size: 1.1rem;
-            /* Animation for text */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s; /* Delay this animation */
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         
+        /* Staggered animation delays */
+        .slide-content h1 { transition-delay: 0.2s; }
+        .slide-content h2 { transition-delay: 0.4s; }
+        .slide-content .button-group { transition-delay: 0.6s; }
+
         /* Show text animation on active slide */
-        .swiper-slide-active .slide-content h2,
-        .swiper-slide-active .slide-content p {
+        .swiper-slide-active .animated-item {
             opacity: 1;
             transform: translateY(0);
         }
@@ -173,6 +175,128 @@
             background-color: #e62117; /* AIIMS Red */
         }
     </style>
+
+
+
+    {{-----------------------For Welcome section -----------------------}}
+
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    /* Center the whole block */
+    .section-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    /* Container with fixed width */
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1100px; /* control the width */
+      width: 100%;
+      gap: 40px;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .heading {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1d2473;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .heading::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #e53935;
+      margin-top: 5px;
+    }
+
+    .director {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .director img {
+      width: 120px;
+      height: auto;
+      border: 1px solid #ccc;
+      margin-right: 15px;
+    }
+
+    .director h3 {
+      margin: 0;
+      font-size: 14px;
+      color: #1d2473;
+    }
+
+    .director p {
+      margin: 5px 0 0;
+      font-size: 13px;
+    }
+
+    .about {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .about a {
+      color: #e53935;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .ministers {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .minister {
+      text-align: center;
+      width: 150px;
+    }
+
+    .minister img {
+      width: 150px;
+      height: 180px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .minister h4 {
+      font-size: 14px;
+      margin: 8px 0 3px;
+      color: #1d2473;
+    }
+
+    .minister p {
+      font-size: 12px;
+      color: #444;
+      margin: 0;
+    }
+  </style>
+
 
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -239,17 +363,17 @@
         <nav class="bg-aiims-navy">
             <div class="container mx-auto px-4 flex justify-between items-center">
                 <ul class="hidden lg:flex items-center text-white text-sm font-bold uppercase">
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOME</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ABOUT US</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOSPITAL SERVICE</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ACADEMICS</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">DEPARTMENTS</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">STUDENT CORNER</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">NOTICES</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">PROCUREMENT</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">JOB</a></li>
+                    <li><a href="{{ route('home') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOME</a></li>
+                    <li><a href="{{ route('about.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ABOUT US</a></li>
+                    <li><a href="{{ route('hospital.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOSPITAL SERVICE</a></li>
+                    <li><a href="{{ route('academics.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ACADEMICS</a></li>
+                    <li><a href="{{ route('departments.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">DEPARTMENTS</a></li>
+                    <li><a href="{{ route('student.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">STUDENT CORNER</a></li>
+                    <li><a href="{{ route('notices.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">NOTICES</a></li>
+                    <li><a href="{{ route('procurement.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">PROCUREMENT</a></li>
+                    <li><a href="{{ route('jobs.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">JOB</a></li>
                     <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">NIRF</a></li>
-                    <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">CONTACT</a></li>
+                    <li><a href="{{ route('contact.create') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">CONTACT</a></li>
                 </ul>
 
                 <div class="lg:hidden flex-grow">

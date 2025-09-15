@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\JobPosting;
 
 class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = JobPosting::active()->orderByDesc('application_end_date');
+
+        if ($request->filled('position_type')) {
+            $query->byPositionType($request->get('position_type'));
+        }
+        if ($request->filled('department')) {
+            $query->byDepartment($request->get('department'));
+        }
+
+        $jobs = $query->paginate(12);
+        return view('jobs.index', compact('jobs'));
     }
 
     /**
@@ -33,9 +44,9 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(JobPosting $job)
     {
-        //
+        return view('jobs.show', compact('job'));
     }
 
     /**

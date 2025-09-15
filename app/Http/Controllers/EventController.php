@@ -3,15 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Event::active()->orderByDesc('event_date');
+
+        if ($request->filled('type')) {
+            $query->byType($request->get('type'));
+        }
+
+        if ($request->boolean('upcoming', true)) {
+            $query->upcoming();
+        }
+
+        $events = $query->paginate(12);
+
+        return view('events.index', compact('events'));
     }
 
     /**
@@ -33,9 +46,9 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Event $event)
     {
-        //
+        return view('events.show', compact('event'));
     }
 
     /**

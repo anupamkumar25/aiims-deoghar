@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create an initial admin user if none exists
+        if (! User::where('email', 'admin@aiimsdeoghar.edu.in')->exists()) {
+            User::create([
+                'name' => 'Administrator',
+                'email' => 'admin@aiimsdeoghar.edu.in',
+                'password' => Hash::make('ChangeMe123!'),
+                'is_admin' => true,
+            ]);
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Seed only the admin by default to avoid duplicates
+        $this->call([
+            AdminUserSeeder::class,
         ]);
     }
 }

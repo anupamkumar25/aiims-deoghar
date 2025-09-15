@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Procurement;
 
 class ProcurementController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Procurement::active()->orderByDesc('closing_date');
+
+        if ($request->filled('type')) {
+            $query->byType($request->get('type'));
+        }
+        if ($request->filled('status')) {
+            $query->byStatus($request->get('status'));
+        }
+
+        $procurements = $query->paginate(12);
+        return view('procurements.index', compact('procurements'));
     }
 
     /**
@@ -33,9 +44,9 @@ class ProcurementController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Procurement $procurement)
     {
-        //
+        return view('procurements.show', compact('procurement'));
     }
 
     /**

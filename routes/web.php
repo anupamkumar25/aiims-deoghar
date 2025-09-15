@@ -12,6 +12,13 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\NoticeController as AdminNoticeController;
+use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\JobController as AdminJobController;
+use App\Http\Controllers\Admin\GalleryImageController as AdminGalleryController;
+use App\Http\Controllers\Admin\DepartmentController as AdminDepartmentController;
+use App\Http\Controllers\CourseController as AdminCourseController;
+use App\Http\Controllers\ProcurementController as AdminProcurementController;
 
 // Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -79,3 +86,37 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/search', function () { return view('search'); })->name('search');
 
 require __DIR__.'/auth.php';
+
+// Admin dedicated login (always available to guests)
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::get('login', [\App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('login');
+        Route::post('login', [\App\Http\Controllers\Admin\AuthController::class, 'login'])->name('login.attempt');
+    });
+});
+
+// Admin routes
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', \App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
+
+    // Notices (admin)
+    Route::get('/notices', [AdminNoticeController::class, 'index'])->name('notices.index');
+    Route::get('/notices/create', [AdminNoticeController::class, 'create'])->name('notices.create');
+    Route::post('/notices', [AdminNoticeController::class, 'store'])->name('notices.store');
+    Route::get('/notices/{notice}/edit', [AdminNoticeController::class, 'edit'])->name('notices.edit');
+    Route::put('/notices/{notice}', [AdminNoticeController::class, 'update'])->name('notices.update');
+    Route::delete('/notices/{notice}', [AdminNoticeController::class, 'destroy'])->name('notices.destroy');
+
+    // Events
+    Route::resource('events', AdminEventController::class)->names('events');
+    // Jobs
+    Route::resource('jobs', AdminJobController::class)->names('jobs');
+    // Gallery
+    Route::resource('gallery', AdminGalleryController::class)->parameters(['gallery' => 'gallery'])->names('gallery');
+    Route::resource('departments', AdminDepartmentController::class)->names('departments');
+    Route::get('/courses', [AdminCourseController::class, 'index'])->name('courses.index');
+    Route::get('/procurements', [AdminProcurementController::class, 'index'])->name('procurements.index');
+    // Profile
+    Route::get('/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+});

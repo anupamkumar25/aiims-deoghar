@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Department;
 
 class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Department::active()->orderBy('sort_order');
+
+        if ($request->filled('q')) {
+            $q = $request->get('q');
+            $query->where(function ($inner) use ($q) {
+                $inner->where('name', 'like', "%$q%")->orWhere('description', 'like', "%$q%");
+            });
+        }
+
+        $departments = $query->paginate(18);
+        return view('departments.index', compact('departments'));
     }
 
     /**
@@ -33,9 +44,9 @@ class DepartmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Department $department)
     {
-        //
+        return view('departments.show', compact('department'));
     }
 
     /**
