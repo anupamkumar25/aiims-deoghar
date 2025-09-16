@@ -11,7 +11,7 @@ class JobController extends Controller
     public function index()
     {
         $this->authorize('admin');
-        $jobs = JobPosting::orderByDesc('application_end_date')->paginate(20);
+        $jobs = JobPosting::orderByDesc('application_end_date')->paginate(5)->withQueryString();
         return view('admin.jobs.index', compact('jobs'));
     }
 

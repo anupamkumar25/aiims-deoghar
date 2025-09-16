@@ -23,6 +23,7 @@ class EventController extends Controller
         }
 
         $events = $query->paginate(12);
+        // $events = $query->paginate(5)->withQueryString();
 
         return view('events.index', compact('events'));
     }

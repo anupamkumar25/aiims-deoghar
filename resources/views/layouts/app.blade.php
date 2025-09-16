@@ -20,6 +20,30 @@
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+
+     {{-- ==== Custom Scrollbar ====  --}}
+<style>
+
+::-webkit-scrollbar {
+  width: 10px;              
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;       
+}
+
+::-webkit-scrollbar-thumb {
+  background: #636262;          
+  border-radius: 0;          
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;          
+}
+
+</style>
+
+
     <!-- Additional CSS -->
     <style>
         .hero-slider {
@@ -360,7 +384,7 @@
             </div>
         </div>
 
-        <nav class="bg-aiims-navy">
+        {{-- <nav class="bg-aiims-navy">
             <div class="container mx-auto px-4 flex justify-between items-center">
                 <ul class="hidden lg:flex items-center text-white text-sm font-bold uppercase">
                     <li><a href="{{ route('home') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOME</a></li>
@@ -390,7 +414,139 @@
                 </button>
             </div>
 
-        </nav>
+        </nav> --}}
+
+         
+
+<nav class="bg-aiims-navy">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <ul class="hidden lg:flex items-center text-white text-sm font-bold uppercase space-x-1">
+            
+            
+            <li>
+                <a href="{{ route('home') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOME</a>
+            </li>
+
+            
+            <li class="relative group">
+                <a href="" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ABOUT US</a>
+
+                <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Director Desk</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Our Mission & Vission</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Logo</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">About Deoghar</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">How to Reach</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Administration</a></li>
+                    <li class="relative group">
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-900">Core Committees & Cell</a>
+                    </li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Anual Report</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Act & Rules</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Privacy Policy</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">RTI</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">eNewsletter</a></li>
+                </ul>
+
+            </li>
+
+            
+            <li class="relative group">
+                <a href="" class="block px-3 py-4 hover:bg-blue-900 transition-colors">HOSPITAL SERVICE</a>
+                <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Administration</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">OPD</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">IPD</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">EHS</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Emergency</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Hospital Charges</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Telemedicine</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Blood Bank</a></li>
+                </ul>
+            </li>
+
+            
+            <li class="relative group">
+                <a href="" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ACADEMICS</a>
+                
+                <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Administration</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Courses</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Undergraduate courses</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Postgraduate courses</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Superspeciality courses</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Fellowship / Post Doctoral Courses</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Research</a></li>
+                </ul>
+            
+            </li>
+
+
+
+            <li class="relative group">
+                <a href="{{ route('departments.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">DEPARTMENTS</a>
+            
+                
+            
+            </li>
+
+
+            <li class="relative group">
+                <a href="" class="block px-3 py-4 hover:bg-blue-900 transition-colors">STUDENT CORNER</a>
+            
+                <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Map</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Anti Ragging</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Hostel</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Library</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Student Welfare</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Exam</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Result</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Notices</a></li>
+                </ul>
+            
+            
+            </li>
+
+
+            <li><a href="{{ route('notices.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">NOTICES</a></li>
+
+
+            <li class="relative group">
+                <a href="{{ route('procurement.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">PROCUREMENT</a>
+
+                <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Tender</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">GeM</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Quotation</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Notice</a></li>
+                </ul>
+            
+            
+            </li>
+
+
+            <li class="relative group">
+                <a href="{{ route('jobs.index') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">JOB</a>
+            
+                <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Advertisment</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Result</a></li>
+                    
+                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Notice</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="#" class="block px-3 py-4 hover:bg-blue-900 transition-colors">NIRF</a></li>
+
+
+            <li><a href="{{ route('contact.create') }}" class="block px-3 py-4 hover:bg-blue-900 transition-colors">CONTACT</a></li>
+        </ul>
+    </div>
+</nav>
+
+
 
     </header>
     <!-- Main Content -->

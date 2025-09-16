@@ -13,7 +13,9 @@ class DepartmentController extends Controller
     public function index()
     {
         $this->authorize('admin');
-        $departments = Department::orderBy('sort_order')->paginate(20);
+        // $departments = Department::orderBy('sort_order')->paginate(20);
+        $departments = Department::orderBy('sort_order')->paginate(5)->withQueryString();
+
         return view('admin.departments.index', compact('departments'));
     }
 
