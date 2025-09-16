@@ -10,25 +10,25 @@
     </div>
     <div>
         <label class="block text-sm font-medium">Head of Department</label>
-        <input name="head_of_department" class="w-full border rounded px-3 py-2">
+        <input name="head_of_department" class="w-full border rounded px-3 py-2" required>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
             <label class="block text-sm font-medium">Email</label>
-            <input type="email" name="email" class="w-full border rounded px-3 py-2">
+            <input type="email" name="email" class="w-full border rounded px-3 py-2" required>
         </div>
         <div>
             <label class="block text-sm font-medium">Phone</label>
-            <input name="phone" class="w-full border rounded px-3 py-2">
+            <input name="phone" class="w-full border rounded px-3 py-2" required>
         </div>
     </div>
     <div>
         <label class="block text-sm font-medium">Description</label>
-        <textarea name="description" rows="5" class="w-full border rounded px-3 py-2"></textarea>
+        <textarea name="description" rows="5" class="w-full border rounded px-3 py-2" required></textarea>
     </div>
     <div>
         <label class="block text-sm font-medium">Services</label>
-        <textarea name="services" rows="4" class="w-full border rounded px-3 py-2"></textarea>
+        <textarea name="services" rows="4" class="w-full border rounded px-3 py-2" required></textarea>
     </div>
     <div>
         <label class="block text-sm font-medium">Image</label>

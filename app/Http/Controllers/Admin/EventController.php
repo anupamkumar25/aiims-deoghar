@@ -27,9 +27,9 @@ class EventController extends Controller
         $this->authorize('admin');
         $data = $request->validate([
             'title' => ['required','string','max:255'],
-            'description' => ['nullable','string'],
+            'description' => ['required','string'],
             'event_date' => ['required','date'],
-            'venue' => ['nullable','string','max:255'],
+            'venue' => ['required','string','max:255'],
             'image' => ['nullable','image','max:2048'],
             'event_type' => ['nullable','string','max:50'],
         ]);

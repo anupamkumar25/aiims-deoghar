@@ -18,7 +18,7 @@
             @foreach($jobs as $job)
                 <tr class="border-t">
                     <td class="px-4 py-2">{{ $job->title }}</td>
-                    <td class="px-4 py-2">{{ optional($job->application_end_date)->format('Y-m-d') }}</td>
+                    <td class="px-4 py-2">{{ optional($job->application_end_date)->format('d-m-Y') }}</td>
                     <td class="px-4 py-2 text-right space-x-2">
                         <a class="text-blue-600" href="{{ route('admin.jobs.edit', $job) }}">Edit</a>
                         <form action="{{ route('admin.jobs.destroy', $job) }}" method="post" class="inline" onsubmit="return confirm('Delete this job?')">

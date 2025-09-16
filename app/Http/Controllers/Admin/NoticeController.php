@@ -32,8 +32,8 @@ class NoticeController extends Controller
         $this->authorize('admin');
         $data = $request->validate([
             'title' => ['required','string','max:255'],
-            'description' => ['nullable','string'],
-            'category' => ['nullable','string','max:100'],
+            'description' => ['required','string'],
+            'category' => ['required','string','max:100'],
             'notice_date' => ['required','date'],
             'is_active' => ['nullable','boolean'],
             'is_featured' => ['nullable','boolean'],
@@ -56,8 +56,8 @@ class NoticeController extends Controller
         $this->authorize('admin');
         $data = $request->validate([
             'title' => ['required','string','max:255'],
-            'description' => ['nullable','string'],
-            'category' => ['nullable','string','max:100'],
+            'description' => ['required','string'],
+            'category' => ['required','string','max:100'],
             'notice_date' => ['required','date'],
             'is_active' => ['nullable','boolean'],
             'is_featured' => ['nullable','boolean'],

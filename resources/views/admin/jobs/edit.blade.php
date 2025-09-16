@@ -11,15 +11,15 @@
     </div>
     <div>
         <label class="block text-sm font-medium">Last Date</label>
-        <input type="date" name="application_end_date" value="{{ old('application_end_date', optional($job->application_end_date)->format('Y-m-d')) }}" class="w-full border rounded px-3 py-2" required>
+        <input type="date" name="application_end_date" value="{{ old('application_end_date', optional($job->application_end_date)->format('d-m-Y')) }}" class="w-full border rounded px-3 py-2" required>
     </div>
     <div>
         <label class="block text-sm font-medium">Start Date</label>
-        <input type="date" name="application_start_date" value="{{ old('application_start_date', optional($job->application_start_date)->format('Y-m-d')) }}" class="w-full border rounded px-3 py-2">
+        <input type="date" name="application_start_date" value="{{ old('application_start_date', optional($job->application_start_date)->format('d-m-Y')) }}" class="w-full border rounded px-3 py-2">
     </div>
     <div>
         <label class="block text-sm font-medium">Position Type</label>
-        <input name="position_type" value="{{ old('position_type', $job->position_type) }}" class="w-full border rounded px-3 py-2" />
+        <input name="position_type" value="{{ old('position_type', $job->position_type) }}" class="w-full border rounded px-3 py-2" required/>
     </div>
     <div>
         <label class="block text-sm font-medium">Requirements</label>

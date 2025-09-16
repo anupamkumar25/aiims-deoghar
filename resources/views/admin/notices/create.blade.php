@@ -11,7 +11,7 @@
             </div>
             <div>
                 <label class="block text-sm font-medium">Category</label>
-                <input name="category" class="w-full border rounded px-3 py-2">
+                <input name="category" class="w-full border rounded px-3 py-2" required>
             </div>
             <div>
                 <label class="block text-sm font-medium">Notice Date</label>
@@ -19,7 +19,7 @@
             </div>
             <div>
                 <label class="block text-sm font-medium">Description</label>
-                <textarea name="description" rows="6" class="w-full border rounded px-3 py-2"></textarea>
+                <textarea name="description" rows="6" class="w-full border rounded px-3 py-2" required></textarea>
             </div>
             <div class="flex items-center gap-4">
                 <label class="inline-flex items-center gap-2"><input type="checkbox" name="is_active" value="1" checked> Active</label>

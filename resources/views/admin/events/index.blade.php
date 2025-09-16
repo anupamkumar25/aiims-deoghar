@@ -19,7 +19,7 @@
             @foreach($events as $event)
                 <tr class="border-t">
                     <td class="px-4 py-2">{{ $event->title }}</td>
-                    <td class="px-4 py-2">{{ optional($event->event_date)->format('Y-m-d') }}</td>
+                    <td class="px-4 py-2">{{ optional($event->event_date)->format('d-m-Y') }}</td>
                     <td class="px-4 py-2">{{ $event->venue }}</td>
                     <td class="px-4 py-2 text-right space-x-2">
                         <a class="text-blue-600" href="{{ route('admin.events.edit', $event) }}">Edit</a>

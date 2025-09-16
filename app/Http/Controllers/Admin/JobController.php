@@ -26,12 +26,12 @@ class JobController extends Controller
         $this->authorize('admin');
         $data = $request->validate([
             'title' => ['required','string','max:255'],
-            'description' => ['nullable','string'],
-            'qualification' => ['nullable','string'],
-            'experience' => ['nullable','string'],
+            'description' => ['required','string'],
+            'qualification' => ['required','string'],
+            'experience' => ['required','string'],
             'application_start_date' => ['nullable','date'],
             'application_end_date' => ['required','date'],
-            'position_type' => ['nullable','string','max:100'],
+            'position_type' => ['required','string','max:100'],
         ]);
         $data['is_active'] = true;
         $data['position_type'] = $data['position_type'] ?? 'general';

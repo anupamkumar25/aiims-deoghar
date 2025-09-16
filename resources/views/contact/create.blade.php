@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium">Phone</label>
-                    <input type="text" name="phone" value="{{ old('phone') }}" class="mt-1 w-full border rounded px-3 py-2">
+                    <input type="text" name="phone" value="{{ old('phone') }}" class="mt-1 w-full border rounded px-3 py-2" required>
                     @error('phone')<p class="text-red-600 text-sm">{{ $message }}</p>@enderror
                 </div>
             </div>

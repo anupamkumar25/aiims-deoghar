@@ -28,11 +28,11 @@ class DepartmentController extends Controller
         $this->authorize('admin');
         $data = $request->validate([
             'name' => ['required','string','max:255'],
-            'description' => ['nullable','string'],
-            'head_of_department' => ['nullable','string','max:255'],
-            'email' => ['nullable','email','max:255'],
-            'phone' => ['nullable','string','max:50'],
-            'services' => ['nullable','string'],
+            'description' => ['required','string'],
+            'head_of_department' => ['required','string','max:255'],
+            'email' => ['required','email','max:255'],
+            'phone' => ['required','string','max:50'],
+            'services' => ['required','string'],
             'image' => ['nullable','image','max:4096'],
             'sort_order' => ['nullable','integer','min:0'],
             'is_active' => ['nullable','boolean'],

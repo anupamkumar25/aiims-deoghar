@@ -4,8 +4,12 @@
     <div class="">
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold">Manage Notices</h1>
-            <a href="{{ route('admin.notices.create') }}" class="px-4 py-2 bg-aiims-red text-white rounded">New Notice</a>
-        </div>
+            <div class="flex items-center space-x-4">
+                <a href="{{ route('admin.notices.create') }}" class="px-4 py-2 bg-aiims-red text-white rounded">New Notice</a>
+                <img src="/images/aiims copy.png" alt="" class="h-10">
+            </div>
+    </div>
+
         <div class="bg-white rounded shadow overflow-x-auto">
             <table class="min-w-full text-sm">
                 <thead class="bg-gray-100 text-left">
@@ -22,7 +26,7 @@
                         <tr class="border-t">
                             <td class="px-4 py-2">{{ $notice->title }}</td>
                             <td class="px-4 py-2">{{ $notice->category }}</td>
-                            <td class="px-4 py-2">{{ optional($notice->notice_date)->format('Y-m-d') }}</td>
+                            <td class="px-4 py-2">{{ optional($notice->notice_date)->format('d-m-Y') }}</td>
                             <td class="px-4 py-2">{{ $notice->is_active ? 'Yes' : 'No' }}</td>
                             <td class="px-4 py-2 text-right space-x-2">
                                 <a class="text-blue-600" href="{{ route('admin.notices.edit', $notice) }}">Edit</a>
