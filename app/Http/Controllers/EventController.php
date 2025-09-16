@@ -18,7 +18,7 @@ class EventController extends Controller
             $query->byType($request->get('type'));
         }
 
-        if ($request->boolean('upcoming', true)) {
+        if ($request->boolean('upcoming', false)) {
             $query->upcoming();
         }
 

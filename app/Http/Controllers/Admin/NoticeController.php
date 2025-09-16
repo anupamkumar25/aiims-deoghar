@@ -39,7 +39,13 @@ class NoticeController extends Controller
             'is_featured' => ['nullable','boolean'],
             'priority' => ['nullable','integer','min:0','max:100'],
         ]);
-        $data['is_active'] = (bool) ($data['is_active'] ?? false);
+        // Ensure category never persists as null so DB default or fallback is used
+        if (empty($data['category'])) {
+            // Unset to allow DB column default('general') to apply on create
+            unset($data['category']);
+        }
+        // Default new notices to active unless explicitly unchecked
+        $data['is_active'] = (bool) ($data['is_active'] ?? true);
         $data['is_featured'] = (bool) ($data['is_featured'] ?? false);
         Notice::create($data);
         return redirect()->route('admin.notices.index')->with('status', 'Notice created');
@@ -57,6 +63,10 @@ class NoticeController extends Controller
             'is_featured' => ['nullable','boolean'],
             'priority' => ['nullable','integer','min:0','max:100'],
         ]);
+        // If category cleared on update, set sensible default
+        if (empty($data['category'])) {
+            $data['category'] = 'general';
+        }
         $data['is_active'] = (bool) ($data['is_active'] ?? false);
         $data['is_featured'] = (bool) ($data['is_featured'] ?? false);
         $notice->update($data);

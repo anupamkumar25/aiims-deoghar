@@ -13,7 +13,7 @@ class NoticeController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Notice::active()->latest();
+        $query = Notice::active()->orderByDesc('notice_date');
         
         if ($request->has('category')) {
             $query->byCategory($request->category);
