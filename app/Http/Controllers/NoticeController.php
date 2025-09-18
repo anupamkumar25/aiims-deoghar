@@ -19,7 +19,7 @@ class NoticeController extends Controller
             $query->byCategory($request->category);
         }
         
-        $notices = $query->paginate(10);
+        $notices = $query->paginate(15);
         
         return view('notices.index', compact('notices'));
     }

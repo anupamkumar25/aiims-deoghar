@@ -22,7 +22,7 @@ class EventController extends Controller
             $query->upcoming();
         }
 
-        $events = $query->paginate(12);
+        $events = $query->paginate(15);
         // $events = $query->paginate(5)->withQueryString();
 
         return view('events.index', compact('events'));

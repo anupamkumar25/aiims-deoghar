@@ -432,7 +432,7 @@
                 <a href="" class="block px-3 py-4 hover:bg-blue-900 transition-colors">ABOUT US</a>
 
                 <ul class="absolute left-0 top-full hidden group-hover:block bg-aiims-navy text-white shadow-md w-48">
-                    <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Director Desk</a></li>
+                    <li><a href="/director-desk" class="block px-4 py-2 hover:bg-blue-900">Director Desk</a></li>
                     <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Our Mission & Vission</a></li>
                     <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">Logo</a></li>
                     <li><a href="#" class="block px-4 py-2 hover:bg-blue-900">About Deoghar</a></li>

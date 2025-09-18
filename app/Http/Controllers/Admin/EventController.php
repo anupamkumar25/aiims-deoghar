@@ -13,7 +13,7 @@ class EventController extends Controller
     {
         $this->authorize('admin');
         // $events = Event::orderByDesc('event_date')->paginate(20);
-        $events = Event::orderByDesc('event_date')->paginate(5)->withQueryString();
+        $events = Event::orderByDesc('event_date')->paginate(2)->withQueryString();
 
         return view('admin.events.index', compact('events'));
     }

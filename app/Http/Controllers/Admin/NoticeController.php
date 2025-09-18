@@ -11,8 +11,8 @@ class NoticeController extends Controller
     public function index(Request $request)
     {
         $this->authorize('admin');
-        
-        $notices = Notice::orderByDesc('notice_date')->paginate(5)->withQueryString();
+
+        $notices = Notice::orderByDesc('notice_date')->paginate(2)->withQueryString();
 
         return view('admin.notices.index', compact('notices'));
     }

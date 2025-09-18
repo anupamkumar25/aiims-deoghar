@@ -21,7 +21,7 @@ class CourseController extends Controller
             $query->byDepartment($request->get('department'));
         }
 
-        $courses = $query->paginate(12);
+        $courses = $query->paginate(15);
 
         return view('academics.courses.index', compact('courses'));
     }

@@ -13,9 +13,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $notices = Notice::active()->orderByDesc('notice_date')->take(5)->get();
+        $notices = Notice::active()->orderByDesc('notice_date')->take(6)->get();
         $events = Event::active()->orderByDesc('event_date')->take(6)->get();
-        $jobs = JobPosting::active()->latest()->take(5)->get();
+        $jobs = JobPosting::active()->latest()->take(6)->get();
         $statistics = Statistic::active()->get();
         $departments = Department::active()->take(6)->get();
 

@@ -21,7 +21,7 @@ class DepartmentController extends Controller
             });
         }
 
-        $departments = $query->paginate(18);
+        $departments = $query->paginate(15);
         return view('departments.index', compact('departments'));
     }
 

@@ -21,7 +21,7 @@ class JobController extends Controller
             $query->byDepartment($request->get('department'));
         }
 
-        $jobs = $query->paginate(12);
+        $jobs = $query->paginate(15);
         return view('jobs.index', compact('jobs'));
     }
 

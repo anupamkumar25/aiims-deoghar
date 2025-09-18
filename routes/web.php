@@ -20,16 +20,17 @@ use App\Http\Controllers\Admin\DepartmentController as AdminDepartmentController
 use App\Http\Controllers\CourseController as AdminCourseController;
 use App\Http\Controllers\ProcurementController as AdminProcurementController;
 
+use App\Livewire\aboutUs\DirectorDesk;
+Route::get('/', DirectorDesk::class)->name('index');
+
+
 // Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // About Us routes
 Route::prefix('about')->name('about.')->group(function () {
     Route::get('/', function () { return view('about.index'); })->name('index');
-    Route::get('/director-desk', function () { return view('about.director-desk'); })->name('director-desk');
-    Route::get('/mission-vision', function () { return view('about.mission-vision'); })->name('mission-vision');
-    Route::get('/administration', function () { return view('about.administration'); })->name('administration');
-    Route::get('/annual-report', function () { return view('about.annual-report'); })->name('annual-report');
+    // Route::get('/director-desk', function () { return view('about.director-desk'); })->name('director-desk') ;
 });
 
 // Hospital Services routes
