@@ -11,7 +11,7 @@
     </div>
     <div>
         <label class="block text-sm font-medium">Event Date</label>
-        <input type="date" name="event_date" value="{{ old('event_date', optional($event->event_date)->format('d-m-Y')) }}" class="w-full border rounded px-3 py-2" required>
+        <input type="date" name="event_date" value="{{ old('event_date', optional($event->event_date)->format('Y-m-d')) }}" class="w-full border rounded px-3 py-2" required>
     </div>
     <div>
         <label class="block text-sm font-medium">Event Type</label>
@@ -29,7 +29,7 @@
         <label class="block text-sm font-medium">Image</label>
         <input type="file" name="image" accept="image/*">
         @if($event->image_path)
-            <div class="mt-2"><img src="{{ Storage::url($event->image_path) }}" class="h-20" alt="Current image"></div>
+            <div class="mt-2"><img src="{{ asset('storage/'.$event->image_path) }}" class="h-20" alt="Current image"></div>
         @endif
     </div>
     <button class="px-6 py-2 bg-aiims-red text-white rounded">Update</button>

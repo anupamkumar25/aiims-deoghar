@@ -9,7 +9,7 @@
         <div class="text-sm text-gray-600 mt-2">{{ $event->event_date->format('M d, Y') }} @if($event->venue) • {{ $event->venue }} @endif</div>
         <div class="prose mt-6">{!! nl2br(e($event->description)) !!}</div>
         @if($event->image_path)
-            <img src="{{ Storage::url($event->image_path) }}" alt="{{ $event->title }}" class="mt-6 rounded" />
+            <img src="{{ asset('storage/'.$event->image_path) }}" alt="{{ $event->title }}" class="mt-6 rounded" />
         @endif
     </div>
 </section>

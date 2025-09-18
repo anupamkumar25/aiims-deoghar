@@ -6,23 +6,23 @@
     @csrf
     <div>
         <label class="block text-sm font-medium">Title</label>
-        <input name="title" class="w-full border rounded px-3 py-2" required>
+        <input name="title" value="{{ old('title') }}" class="w-full border rounded px-3 py-2" required>
     </div>
     <div>
         <label class="block text-sm font-medium">Event Date</label>
-        <input type="date" name="event_date" class="w-full border rounded px-3 py-2" required>
+        <input type="date" name="event_date" value="{{ old('event_date') }}" class="w-full border rounded px-3 py-2" required>
     </div>
     <div>
         <label class="block text-sm font-medium">Event Type</label>
-        <input name="event_type" class="w-full border rounded px-3 py-2" placeholder="seminar / workshop / cme" required/>
+        <input name="event_type" value="{{ old('event_type') }}" class="w-full border rounded px-3 py-2" placeholder="seminar / workshop / cme" />
     </div>
     <div>
         <label class="block text-sm font-medium">Venue</label>
-        <input name="venue" class="w-full border rounded px-3 py-2" required>
+        <input name="venue" value="{{ old('venue') }}" class="w-full border rounded px-3 py-2" required>
     </div>
     <div>
         <label class="block text-sm font-medium">Description</label>
-        <textarea name="description" rows="6" class="w-full border rounded px-3 py-2" required></textarea>
+        <textarea name="description" rows="6" class="w-full border rounded px-3 py-2" required>{{ old('description') }}</textarea>
     </div>
     <div>
         <label class="block text-sm font-medium">Image</label>

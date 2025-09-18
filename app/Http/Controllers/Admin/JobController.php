@@ -28,7 +28,7 @@ class JobController extends Controller
             'title' => ['required','string','max:255'],
             'description' => ['required','string'],
             'qualification' => ['required','string'],
-            'experience' => ['required','string'],
+            'experience' => ['nullable','string'],
             'application_start_date' => ['nullable','date'],
             'application_end_date' => ['required','date'],
             'position_type' => ['required','string','max:100'],
