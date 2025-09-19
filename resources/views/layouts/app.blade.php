@@ -22,6 +22,25 @@
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    {{-- For scroller content --}}
+    <style>
+        .scroll-container{
+            width: 100%;
+            height: 230px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .scroll-content img{
+            display: inline-block;
+            width: 250px;
+            height: auto;
+            margin: 10px;
+            vertical-align: top;
+        }
+    </style>
+
 
 
     {{-- For Navigation Bar --}}

@@ -390,8 +390,10 @@
     </div>
 
 
+<div>
 
-
+    
+</div>
     <!-- Latest Notices -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -474,9 +476,26 @@
         </div>
     </section>
 
+
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <img src="/images/img1.jpg" alt="">
+            {{-- <img src="/images/img2.jpg" alt=""> --}}
+            <img src="/images/img3.jpeg" alt="">
+            <img src="/images/img4.jpeg" alt="">
+            <img src="/images/img5.jpeg" alt="">
+            <img src="/images/img6.jpg" alt="">
+            <img src="/images/img7.jpg" alt="">
+            <img src="/images/img8.jpg" alt="">
+            <img src="/images/img9.jpg" alt="">
+            <img src="/images/img11.jpg" alt="">
+        </div>
+    </div>
+
+
     <!-- Departments Preview -->
     @if($departments->count() > 0)
-        <section class="py-16 bg-white">
+        <section class="py-12 bg-white">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-900">Our Departments</h2>
