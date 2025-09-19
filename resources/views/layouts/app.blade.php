@@ -22,9 +22,84 @@
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+
+    {{-- For Scrolling animation of notices on home page --}}
+
+    <style>
+        .scrolling-container {
+            animation: scroll-up 20s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .scrolling-container:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-up {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+                /* Moves the content up by 50% of its total height */
+            }
+        }
+    </style>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0ot92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <style>
+        /* Base for all scrolling containers */
+        .scrolling-container {
+            animation: scroll-up 20s linear infinite;
+            
+            padding-top: 1rem;
+            
+            padding-bottom: 1rem;
+            
+        }
+
+        /* Specific speeds for each section if desired */
+        .notices-scroll {
+            animation-duration: 25s;
+            
+        }
+
+        .jobs-scroll {
+            animation-duration: 20s;
+        }
+
+        .events-scroll {
+            
+            animation-duration: 22s;
+            
+        }
+
+
+        /* Pause animation on hover */
+        .scrolling-container:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-up {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+                /* This assumes content is duplicated once */
+            }
+        }
+    </style>
+
+
+
+
     {{-- For scroller content --}}
     <style>
-        .scroll-container{
+        .scroll-container {
             width: 100%;
             height: 230px;
             overflow-x: scroll;
@@ -32,7 +107,7 @@
             white-space: nowrap;
         }
 
-        .scroll-content img{
+        .scroll-content img {
             display: inline-block;
             width: 250px;
             height: auto;
@@ -53,7 +128,7 @@
             position: fixed;
             z-index: 1000;
             top: 0;
-            right: 0;  
+            right: 0;
             background-color: #111;
             overflow-x: hidden;
             padding-top: 60px;
@@ -76,13 +151,15 @@
         .sidenav .closebtn {
             position: absolute;
             top: 0;
-            left: 25px; /* Adjusted for right-side slide */
+            left: 25px;
+            /* Adjusted for right-side slide */
             font-size: 36px;
             margin-left: 50px;
         }
 
         #main {
-            transition: margin-right .5s; /* Adjusted for right-side slide */
+            transition: margin-right .5s;
+            /* Adjusted for right-side slide */
             padding: 20px;
         }
 
@@ -96,17 +173,17 @@
               
         } */
 
-.hamburger {
-    display: inline-block;
+        .hamburger {
+            display: inline-block;
             cursor: pointer;
-            
+
             font-size: 30px;
             color: #e62117;
-    top: 136px;
-    right: 35px;
-    cursor: pointer;
-    z-index: 1001;     
-}
+            top: 136px;
+            right: 35px;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
         .hamburger div {
             width: 35px;
@@ -143,27 +220,28 @@
             .hamburger {
                 display: inline-block;
             }
+
             .sidenav a {
                 font-size: 22px;
             }
         }
     </style>
 
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginRight = "250px";
-    }
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+        }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginRight = "0";
-    }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+        }
 
-    function toggleHamburger(x) {
-        x.classList.toggle("change");
-    }
-</script>
+        function toggleHamburger(x) {
+            x.classList.toggle("change");
+        }
+    </script>
 
 
 
