@@ -1,0 +1,93 @@
+Date - 16/09/2025
+-----------------
+1. Fixed button and Image in Manage notice panel:{
+Replaced space-between with space-x-4 -> this adds horizontal spacing between button and image
+Added items-center -> keeps the button and image aligned vertically.
+Added class="h-10" to the image -> ensures the image height is consistent with the button. }
+
+2. required/admin/notices/index.blade.php ---> Updated the Date format
+   resources/view/notices/show.blade.php ----> Updated the Date format logic
+
+3. app/Http/Controllers/Admin ----> Added required in Notice for description, category such that every field needed to be filled to create a notice 
+   required/admin/notices/create.blade.php ---> Added required tag in input tabs such that there is a warning
+
+4. Added required for all the sections
+
+5. Fixed Data format for all sections
+
+6. Added admin table to view in next page: 
+   Used Laravel's built in function paginate, replaced all() to paginate(5) in index function of admin/evenController.php and then in index page called the function {{ $events->links() }} to show only 5 events.
+
+7. Fixed the Scrollbar using ::-webkit-scrollbar
+
+8. Navbar update
+
+Date - 17/09/2025
+-----------------
+1. Recalling the SQL queries:
+
+A. Fetching all the data from today:
+   SELECT * FROM events WHERE DATE(created_at) = CURDATE();
+
+B. Fetching most recent 5 data:
+   SELECT * FROM events ORDER BY created_at DESC LIMIT 5;
+
+c. Fetching all future events:
+   SELECT * FROM events WHERE event_date > CURDATE() ORDER BY event_date ASC;
+
+D. Fetching all past events:
+   SELECT * FROM events WHERE event_date < CURDATE() ORDER BY event_date DESC;
+
+E. Count total events added today 
+   SELECT COUNT(*) AS total_today FROM events WHERE DATE(created_at) = CURDATE();
+
+F. Count events by month
+   SELECT MONTH(event_date) AS month, COUNT(*) AS total_events FROM events GROUP BY MONTH(event_date) ORDER BY month;
+
+G. Fetch data with a keyword
+   SELECT * FROM events WHERE title LIKE '%New Notice%';
+
+H. Fetch data between dates
+   SELECT * FROM events WHERE event_date BETWEEN '2025-09-10' AND '2025-09-10';
+
+I. Update existing data 
+   UPDATE events SET title = 'Update title' WHERE id = 11;
+
+J. Delete the data 
+   DELETE FROM notices WHERE id = 14;
+
+2. Fixed pagination: Used the default pagination 
+
+3. Fixed contents in home page to show only 6 events 
+
+Date - 18/09/2025
+------------------
+A. Added data
+
+B. Fixed event for image handeling
+
+C. Added side nav
+
+Date - 19/09/2025
+------------------
+A. Added Horizontal scroller for a part of content
+
+B. Updating the Notice, Job and Event tab of homepage in a Box 
+
+Date - 20/09/2025
+-----------------
+A. Added marquee tag
+
+B. Learning about session storage:
+
+{
+const user = { name: "John", age: 30 };
+sessionStorage.setItem("userData", JSON.stringify(user));
+console.log("User data saved in sessionStorage");
+
+
+console.log(sessionStorage.getItem("userData"));
+}
+
+Session storage saves the data for the active tab and keeps it until the tab is closed. It can survive the refreshes and change of pages within the tab.
+It helps to reduce server load as it saves data in buffer storage and doesn't needed to fetch data again and again.

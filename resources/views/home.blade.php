@@ -207,34 +207,6 @@
 
 
 
-
-
-
-    {{-- <!-- Statistics Section -->
-    <section class="py-16 bg-white-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Hospital Statistics</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                @foreach($statistics as $stat)
-                <div class="bg-white rounded-lg shadow-lg p-8 text-center statistics-card">
-                    <div class="text-4xl text-blue-600 mb-4">
-                        @if($stat->icon)
-                        {!! $stat->icon !!}
-                        @else
-                        📊
-                        @endif
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ $stat->name }}</h3>
-                    <div class="space-y-1">
-                        <p class="text-3xl font-bold text-blue-600">Today: {{ $stat->today_count }}</p>
-                        <p class="text-lg text-gray-600">Total: {{ $stat->total_count }}</p>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section> --}}
-
     <!-- Welcome Section -->
     {{-- <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -390,33 +362,6 @@
     </div>
 
 
-    <!-- Latest Notices -->
-    {{-- <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-900">Latest Notices</h2>
-                <a href="{{ route('notices.index') }}" class="text-blue-600 hover:text-blue-800 font-medium">View All →</a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach($notices as $notice)
-                    <div class="bg-white rounded-lg shadow-md p-6 notice-card">
-                        <div class="flex items-start justify-between mb-4">
-                            <span
-                                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $notice->category }}</span>
-                            <span class="text-sm text-gray-500">{{ $notice->notice_date->format('M d, Y') }}</span>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ $notice->title }}</h3>
-                        <p class="text-gray-600 text-sm mb-4">{{ \Illuminate\Support\Str::limit($notice->description, 100) }}
-                        </p>
-                        <a href="{{ route('notices.show', $notice) }}"
-                            class="text-blue-600 hover:text-blue-800 font-medium">Read More →</a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section> --}}
-
-
 
 
     <div class="container mx-auto px-4 py-16">
@@ -429,8 +374,21 @@
                     <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="bg-white rounded-lg  shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
-                    <div class="scrolling-container noticess-scroll absolute w-full top-0 left-0 px-4">
-
+                    
+                    <div class="absolute w-full top-0 left-0 px-4">
+                        <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
+                            @foreach($notices as $notice)
+                                <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
+                                    <div class="flex items-center text-gray-600 text-xs mb-1">
+                                        <i class="far fa-calendar-alt mr-2"></i>
+                                        <span>{{ $notice->notice_date->format('M d, Y') }}</span>
+                                    </div>
+                                    <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $notice->title }}</h3>
+                                    <a href="{{ route('notices.show', $notice) }}"
+                                        class="text-blue-500 hover:underline text-xs mt-1 block">Read More →</a>
+                                </div>
+                            @endforeach
+                        </marquee>
 
 
                     </div>
@@ -447,11 +405,20 @@
                         <i class="fas fa-external-link-alt"></i></a>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
-                        <div class="scrolling-container jobs-scroll absolute w-full top-0 left-0 px-4">
-
-
-
-
+                        <div class="absolute w-full top-0 left-0 px-4">
+                            <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
+                                @foreach($jobs as $job)
+                                    <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
+                                        <div class="flex items-center text-gray-600 text-xs mb-1">
+                                            <i class="far fa-calendar-alt mr-2"></i>
+                                            <span>{{ $job->application_end_date->format('M d, Y') }}</span>
+                                        </div>
+                                            <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $job->title }}</h3>
+                                            <a href="{{ route('jobs.show', $job) }}"
+                                            class="text-blue-500 hover:underline text-xs mt-1 block">View Details →</a>
+                                    </div>
+                            @endforeach
+                            </marquee>
                         </div>
                     </div>
                 </div>
@@ -465,9 +432,20 @@
                             <i class="fas fa-external-link-alt"></i></a>
                     </div>
                         <div class="bg-white rounded-lg shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
-                            <div class="scrolling-container events-scroll absolute w-full top-0 left-0 px-4">
-
-
+                            <div class="absolute w-full top-0 left-0 px-4">
+                                <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
+                                    @foreach($events as $event)
+                                        <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
+                                            <div class="flex items-center text-gray-600 text-xs mb-1">
+                                                <i class="far fa-calendar-alt mr-2"></i>
+                                                <span>{{ $event->event_date->format('M d, Y') }}</span>
+                                            </div>
+                                                <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $event->title }}</h3>
+                                                <a href="{{ route('events.show', $event) }}"
+                                                class="text-blue-500 hover:underline text-xs mt-1 block">Read More →</a>
+                                        </div>
+                                    @endforeach
+                                </marquee>
 
                             </div>
                         </div>
@@ -495,6 +473,31 @@
             <img src="/images/img11.jpg" alt="">
         </div>
     </div>
+
+        <!-- Statistics Section -->
+    {{-- <section class="py-16 bg-white-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Hospital Statistics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                @foreach($statistics as $stat)
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center statistics-card">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        @if($stat->icon)
+                        {!! $stat->icon !!}
+                        @else
+                        📊
+                        @endif
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ $stat->name }}</h3>
+                    <div class="space-y-1">
+                        <p class="text-3xl font-bold text-blue-600">Today: {{ $stat->today_count }}</p>
+                        <p class="text-lg text-gray-600">Total: {{ $stat->total_count }}</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section> --}}
 
 
     <!-- Departments Preview -->
