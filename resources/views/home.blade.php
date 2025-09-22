@@ -48,7 +48,7 @@
                         </a>
                         <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html"
                             target="_blank"
-                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
+                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
                             Lab Report
                         </a>
                     </div>
@@ -73,7 +73,7 @@
                         </a>
                         <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html"
                             target="_blank"
-                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
+                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
                             Lab Report
                         </a>
                     </div>
@@ -98,7 +98,7 @@
                         </a>
                         <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html"
                             target="_blank"
-                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
+                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
                             Lab Report
                         </a>
                     </div>

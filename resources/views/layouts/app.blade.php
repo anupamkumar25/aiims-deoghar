@@ -48,22 +48,24 @@
     </style>
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0ot92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0ot92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Base for all scrolling containers */
         .scrolling-container {
             animation: scroll-up 20s linear infinite;
-            
+
             padding-top: 1rem;
-            
+
             padding-bottom: 1rem;
-            
+
         }
 
         /* Specific speeds for each section if desired */
         .notices-scroll {
             animation-duration: 25s;
-            
+
         }
 
         .jobs-scroll {
@@ -71,9 +73,9 @@
         }
 
         .events-scroll {
-            
+
             animation-duration: 22s;
-            
+
         }
 
 
@@ -129,17 +131,40 @@
             z-index: 1000;
             top: 0;
             right: 0;
-            background-color: #111;
+            background-color: #1A237E;
             overflow-x: hidden;
             padding-top: 60px;
             transition: 0.5s;
+        }
+
+        .sidenav-aiims {
+            text-align: center;
+            font-size: 25px;
+            padding: 20px;
+
+        }
+
+        #first {
+            color: rgba(230, 33, 23, 0.8);
+        }
+
+
+        #second {
+            color: rgba(255, 255, 255, 0.8);
+
+        }
+
+        .sidenav-aiims p2 {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 25px;
+            display: block;
         }
 
         .sidenav a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: #818181;
+            color: #ffffff;
             display: block;
             transition: 0.3s;
         }
@@ -227,6 +252,7 @@
         }
     </style>
 
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -242,6 +268,60 @@
             x.classList.toggle("change");
         }
     </script>
+
+
+    {{-- For Sidenav search baar --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .search-container {
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            max-width: 500px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-control.search-input {
+            border: none;
+            background: transparent;
+            padding-left: 20px;
+            font-size: 1rem;
+            height: 50px;
+        }
+
+        .form-control.search-input:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .btn-search {
+            background-color: #007bff;
+            color: white;
+            border-radius: 50px;
+            padding: 5px 10px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-search:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .search-icon {
+            color: #6c757d;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
 
 
 
@@ -616,7 +696,7 @@
             </div>
         </div>
 
-        <div class="bg-white py-4">
+        <div class="bg-white py-2">
             <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-4">
                 <div class="flex items-center space-x-3">
                     <svg class="w-10 h-10 text-aiims-red" fill="currentColor" viewBox="0 0 24 24">
@@ -635,18 +715,25 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-3">
-                    <!-- <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 10L21 7L17 3L14 6" stroke="#29b6f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13 7L12 8" stroke="#fbc02d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13 7L3 17C2.46957 17.5304 2.11086 18.2391 2.0076  1 19C1.86478 20.0732 2.92679 21.1352 4 21C4.76086 20.8891 5.46957 20.5304 6 20L16 10" stroke="#f44336" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg> -->
-                    <div class="flex flex-col">
+                
+                    {{-- <div class="flex items-center space-x-2">
+                        <img src="/images/hims.png" alt="" class="h-8">
                         <span class="font-bold text-gray-800">HIMS</span>
                         <a href="https://aiimsdeoghar.prd.dcservices.in/AHIMSG5/hissso/Login"
                             class="text-sm text-gray-600 hover:underline">Click here</a>
+                    </div> --}}
+
+                    <div class="flex flex-col items-center space-y-0">
+                        <div class="flex items-center space-x-1">
+                            <img src="/images/himss.png" alt="" class="h-15">
+                            <span class="font-bold text-gray-800">HIMS</span>
+                        </div>
+                        <a href="https://aiimsdeoghar.prd.dcservices.in/AHIMSG5/hissso/Login" class="text-sm text-gray-600 hover:underline">
+                        Click here
+                        </a>
                     </div>
-                </div>
+
+                
             </div>
         </div>
 
@@ -841,10 +928,35 @@
                 <!-- Sidenav -->
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
-                    <a href="#">Contact</a>
+                    <div class="sidenav-aiims">
+                        <a><span id="first">AIIMS </span><span id="second">Deoghar</span></a>
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-8 col-lg-6">
+                                <div class="search-container position-relative">
+                                    <form class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="search-icon feather feather-search">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                        <input class="form-control search-input ps-5" type="search"
+                                            placeholder="Search anything..." aria-label="Search">
+                                        <button class="btn btn-search ms-2" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Tender</a>
+                    <a href="#">Research</a>
+                    <a href="#">Events</a>
+                    <a href="#">Contact US</a>
                 </div>
 
                 <!-- Hamburger Icon (Trigger) -->

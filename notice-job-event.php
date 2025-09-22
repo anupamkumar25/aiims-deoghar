@@ -158,3 +158,279 @@
             @endif
 @endsection
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Statistics Dashboard</title>
+    <style>
+        /* General body and font styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Container for the entire dashboard */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Section header styling */
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #e74c3c; /* Red underline */
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Main statistics grid layout */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* Styling for each individual statistic card */
+        .stat-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for the icon at the top of the card */
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #f8f8f8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border: 2px solid #ccc;
+        }
+
+        .icon-circle img {
+            width: 70px;
+            height: 70px;
+        }
+
+        /* Styling for the numbers (Today & Total) */
+        .stat-numbers {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .number-group {
+            text-align: center;
+        }
+
+        .number-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .number-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        /* Styling for the text description at the bottom */
+        .stat-text {
+            font-size: 16px;
+            color: #555;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Loading state styling */
+        #loading-message {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <div class="header">STATISTICS</div>
+
+        <div id="loading-message">Loading data...</div>
+
+        <div class="stats-grid" id="stats-grid" style="display: none;">
+            
+            <div class="stat-card">
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/70/4a90e2/fff?text=OPD" alt="OPD Icon">
+                </div>
+                <div class="stat-numbers">
+                    <div class="number-group">
+                        <div class="number-label">Today</div>
+                        <div class="number-value" id="opd-today">---</div>
+                    </div>
+                    <div class="number-group">
+                        <div class="number-label">Total</div>
+                        <div class="number-value" id="opd-total">---</div>
+                    </div>
+                </div>
+                <div class="stat-text">O.P.D REGISTRATION</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/70/50c878/fff?text=IPD" alt="IPD Icon">
+                </div>
+                <div class="stat-numbers">
+                    <div class="number-group">
+                        <div class="number-label">Today</div>
+                        <div class="number-value" id="ipd-today">---</div>
+                    </div>
+                    <div class="number-group">
+                        <div class="number-label">Total</div>
+                        <div class="number-value" id="ipd-total">---</div>
+                    </div>
+                </div>
+                <div class="stat-text">I.P.D ADMISSION</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/70/e74c3c/fff?text=24/7" alt="Emergency Icon">
+                </div>
+                <div class="stat-numbers">
+                    <div class="number-group">
+                        <div class="number-label">Today</div>
+                        <div class="number-value" id="emergency-today">---</div>
+                    </div>
+                    <div class="number-group">
+                        <div class="number-label">Total</div>
+                        <div class="number-value" id="emergency-total">---</div>
+                    </div>
+                </div>
+                <div class="stat-text">EMERGENCY</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/70/8e44ad/fff?text=LAB" alt="Lab Test Icon">
+                </div>
+                <div class="stat-numbers">
+                    <div class="number-group">
+                        <div class="number-label">Today</div>
+                        <div class="number-value" id="lab-today">---</div>
+                    </div>
+                    <div class="number-group">
+                        <div class="number-label">Total</div>
+                        <div class="number-value" id="lab-total">---</div>
+                    </div>
+                </div>
+                <div class="stat-text">LAB TEST</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // The URL of your backend API endpoint
+        // REPLACE 'YOUR_API_ENDPOINT_HERE' with your actual API URL
+        const API_URL = 'YOUR_API_ENDPOINT_HERE';
+
+        // Function to fetch data from the API and update the dashboard
+        async function fetchStatistics() {
+            const loadingMessage = document.getElementById('loading-message');
+            const statsGrid = document.getElementById('stats-grid');
+            
+            // Show loading message and hide the grid initially
+            loadingMessage.style.display = 'block';
+            statsGrid.style.display = 'none';
+
+            try {
+                // Fetch the data from the API
+                const response = await fetch(API_URL);
+
+                // Check if the request was successful
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                // Parse the JSON data from the response
+                const data = await response.json();
+
+                // Update the HTML elements with the fetched data
+                document.getElementById('opd-today').textContent = data.opd.today.toLocaleString();
+                document.getElementById('opd-total').textContent = data.opd.total.toLocaleString();
+                
+                document.getElementById('ipd-today').textContent = data.ipd.today.toLocaleString();
+                document.getElementById('ipd-total').textContent = data.ipd.total.toLocaleString();
+                
+                document.getElementById('emergency-today').textContent = data.emergency.today.toLocaleString();
+                document.getElementById('emergency-total').textContent = data.emergency.total.toLocaleString();
+                
+                document.getElementById('lab-today').textContent = data.lab_test.today.toLocaleString();
+                document.getElementById('lab-total').textContent = data.lab_test.total.toLocaleString();
+                
+                // Hide loading message and show the grid
+                loadingMessage.style.display = 'none';
+                statsGrid.style.display = 'grid';
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                loadingMessage.textContent = 'Failed to load data. Please try again later.';
+            }
+        }
+
+        // Call the function to fetch and display data when the page loads
+        fetchStatistics();
+
+        // Optional: Set an interval to refresh the data automatically
+        // Example: Refresh every 5 minutes (300,000 milliseconds)
+        // setInterval(fetchStatistics, 300000);
+
+    </script>
+</body>
+</html>
