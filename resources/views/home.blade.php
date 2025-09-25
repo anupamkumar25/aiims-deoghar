@@ -55,6 +55,30 @@
                 </div>
             </div>
 
+            <div class="swiper-slide">
+                <img src="images/images.jpg" alt="AIIMS Building">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-item">
+                        अखिल भारतीय आयुर्विज्ञान संस्थान देवघर
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-8 animated-item">
+                        ALL INDIA INSTITUTE OF MEDICAL SCIENCES DEOGHAR
+                    </h2>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center button-group animated-item">
+                        <a href="https://ors.gov.in/orsportal/selectAppointment" target="_blank"
+                            class="bg-red-500 text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 hover:shadow-lg transition duration-300 ease-in-out">
+                            Online Registration System
+                        </a>
+                        <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html"
+                            target="_blank"
+                            class="bg-white border-2 border-red-500 text-red-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
+                            Lab Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Slide 2: Patient Care -->
             <div class="swiper-slide">
                 <img src="images/aiims2.jpeg" alt="AIIMS Auditorium">
@@ -144,7 +168,7 @@
 
     <section class="bg-gray-90 py-9">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 text-center">
 
                 <!-- Button 1: Event -->
                 <a href="{{ route('events.index') }}" class="group flex flex-col items-center space-y-4 no-underline">
@@ -192,6 +216,14 @@
                 </a>
 
                 <!-- Button 6: Research -->
+                <a href="#" class="group flex flex-col items-center space-y-4 no-underline">
+                    <div
+                        class="w-28 h-28 bg-red-600 rounded-full flex items-center justify-center text-white text-5xl shadow-lg transform transition-transform duration-300 hover:bg-blue-950 group-hover:scale-110 group-hover:shadow-xl">
+                        <i class="fa-solid fa-flask-vial"></i>
+                    </div>
+                    <span class="font-bold text-lg text-indigo-900">Research</span>
+                </a>
+
                 <a href="#" class="group flex flex-col items-center space-y-4 no-underline">
                     <div
                         class="w-28 h-28 bg-red-600 rounded-full flex items-center justify-center text-white text-5xl shadow-lg transform transition-transform duration-300 hover:bg-blue-950 group-hover:scale-110 group-hover:shadow-xl">
