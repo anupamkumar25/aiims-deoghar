@@ -20,10 +20,6 @@ use App\Http\Controllers\Admin\DepartmentController as AdminDepartmentController
 use App\Http\Controllers\CourseController as AdminCourseController;
 use App\Http\Controllers\ProcurementController as AdminProcurementController;
 
-use App\Livewire\aboutUs\DirectorDesk;
-Route::get('/', DirectorDesk::class)->name('index');
-
-
 // Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
