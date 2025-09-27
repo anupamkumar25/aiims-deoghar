@@ -1,0 +1,24 @@
+# IMPORTANT: This Laravel application cannot be deployed on Netlify
+# Netlify is designed for static sites and does not support PHP applications.
+# 
+# This file exists only to prevent build errors, but the application
+# will not function properly on Netlify.
+#
+# RECOMMENDED HOSTING OPTIONS FOR LARAVEL:
+# 1. Railway (https://railway.app) - Easy Laravel deployment
+# 2. Heroku (https://heroku.com) - Popular platform with PHP support
+# 3. DigitalOcean App Platform (https://cloud.digitalocean.com/apps)
+# 4. Laravel Forge + VPS (https://forge.laravel.com)
+# 5. Vercel (with serverless functions, but complex setup)
+# 6. AWS Elastic Beanstalk
+# 7. Google Cloud Run
+#
+# For quick deployment, Railway is recommended as it has excellent Laravel support.
+
+[build]
+  # This build will fail because Laravel requires PHP server
+  command = "echo 'Laravel application detected - cannot deploy on Netlify' && exit 1"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"

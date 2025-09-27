@@ -1,0 +1,38 @@
+# Development files
+.env
+.env.local
+.env.example
+.env.testing
+
+# Logs
+storage/logs/*
+*.log
+
+# Cache
+bootstrap/cache/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+
+# Testing
+tests/
+phpunit.xml
+.phpunit.result.cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+DEPLOYMENT.md
