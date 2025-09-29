@@ -56,7 +56,7 @@
             </div>
 
             <div class="swiper-slide">
-                <img src="images/images.jpg" alt="AIIMS Building">
+                <img src="images/sliderImg1.jpg" alt="AIIMS Building">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-item">
@@ -81,7 +81,7 @@
 
             <!-- Slide 2: Patient Care -->
             <div class="swiper-slide">
-                <img src="images/aiims2.jpeg" alt="AIIMS Auditorium">
+                <img src="images/sliderImg2.jpg" alt="AIIMS Auditorium">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-item">
@@ -106,7 +106,7 @@
 
             <!-- Slide 3: Medical Education -->
             <div class="swiper-slide">
-                <img src="images/aiims3.jpg" alt="Medical Professionals">
+                <img src="images/sliderImg3.jpg" alt="Medical Professionals">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-item">
@@ -168,7 +168,7 @@
 
     <section class="bg-gray-90 py-9">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
 
                 <!-- Button 1: Event -->
                 <a href="{{ route('events.index') }}" class="group flex flex-col items-center space-y-4 no-underline">
@@ -224,13 +224,7 @@
                     <span class="font-bold text-lg text-indigo-900">Research</span>
                 </a>
 
-                <a href="#" class="group flex flex-col items-center space-y-4 no-underline">
-                    <div
-                        class="w-28 h-28 bg-red-600 rounded-full flex items-center justify-center text-white text-5xl shadow-lg transform transition-transform duration-300 hover:bg-blue-950 group-hover:scale-110 group-hover:shadow-xl">
-                        <i class="fa-solid fa-flask-vial"></i>
-                    </div>
-                    <span class="font-bold text-lg text-indigo-900">Research</span>
-                </a>
+                
 
             </div>
         </div>
@@ -350,22 +344,12 @@
                     </div>
 
                 </div>
+                
                 <div>
                     <h3>Executive Director & CEO, AIIMS Deoghar</h3>
                     <p>Prof. (Dr.) Saurabh Varshney</p>
                 </div>
 
-
-                {{-- <div class="about">
-                    AIIMS Deoghar is one of the Apex healthcare institutes being established by
-                    the Ministry of Health & Family Welfare, Government of India under the
-                    <em>Pradhan Mantri Swasthya Suraksha Yojna</em> (PMSSY), which planned to set up
-                    new AIIMS institutions in underserved areas of the country with the aim of
-                    correcting regional imbalances in quality tertiary level healthcare in the
-                    country and in attaining self sufficiency in graduate and postgraduate
-                    medical education and training.
-                    <a href="#">read more »</a>
-                </div> --}}
             </div>
 
             <!-- Right Section -->
