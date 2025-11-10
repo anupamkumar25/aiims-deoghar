@@ -24,7 +24,7 @@
 
 
     <style>
-        
+
     </style>
 
 
@@ -374,6 +374,41 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: #333;
+        }
+    </style>
+
+
+    {{-- Scroll top --}}
+    <style>
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: red;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 10px;
+            border-radius: 0px;
+            font-size: 30px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+            /* Add a dark-grey background on hover */
         }
     </style>
 
@@ -1203,17 +1238,44 @@
                 <p>&copy; 2019 - 2025 <span class="text-aiims-red font-bold">AIIMS Deoghar</span>. All Rights Reserved.
                     | Designed by- IT Department</p>
                 <div class="flex items-center gap-4">
-                    <div class="bg-black text-white px-3 py-1 tracking-widest rounded">
-                        000634290
+                    {{-- <div class="bg-black text-white px-3 py-1 tracking-widest rounded">
+                        <a href='http://www.freevisitorcounters.com'>www.Freevisitorcounters</a>
+                        <script type='text/javascript'
+                            src='https://www.freevisitorcounters.com/auth.php?id=c83eadee7c208c39b774cc170d3c38ebc63c7aa0'></script>
+                        <script type="text/javascript"
+                            src="https://www.freevisitorcounters.com/en/home/counter/1434664/t/5"></script>
+                    </div> --}}
+                    <div class="visitor-counter">
+                        <img src="https://hitwebcounter.com/counter/counter.php?page=7818060&amp;style=0006&amp;nbdigits=9&amp;type=ip&amp;initCount=0"
+                            title="Visitor Counter" alt="Visitor Counter" border="0">
                     </div>
-                    <a href="#page-top"
-                        class="w-10 h-10 bg-aiims-red flex items-center justify-center rounded hover:bg-red-700 transition-colors">
-                        <i class="fa-solid fa-chevron-up text-white"></i>
-                    </a>
+                    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Get the button:
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
 
     <!-- Scripts -->
     <script>
