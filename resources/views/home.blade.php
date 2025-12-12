@@ -6,26 +6,26 @@
 @section('content')
     <!-- Hero Section -->
     <!-- <section class="hero-slider relative overflow-hidden">
-            <div class="container mx-auto px-4 py-20">
-                <div class="text-center text-white">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                        अखिल भारतीय आयुर्विज्ञान संस्थान देवघर
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-4">
-                        ALL INDIA INSTITUTE OF MEDICAL SCIENCES DEOGHAR
-                    </h2>
+                <div class="container mx-auto px-4 py-20">
+                    <div class="text-center text-white">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            अखिल भारतीय आयुर्विज्ञान संस्थान देवघर
+                        </h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+                            ALL INDIA INSTITUTE OF MEDICAL SCIENCES DEOGHAR
+                        </h2>
 
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://ors.gov.in/orsportal/selectAppointment" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            Online Registration System
-                        </a>
-                        <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                            Lab Report
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://ors.gov.in/orsportal/selectAppointment" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                Online Registration System
+                            </a>
+                            <a href="https://aiimsdeoghar.prd.dcservices.in/Patient_Portal/transactions/PatientLogin.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                                Lab Report
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section> -->
+            </section> -->
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -168,7 +168,7 @@
 
     <section class="bg-gray-90 py-9">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 text-center">
 
                 <!-- Button 1: Event -->
                 <a href="{{ route('events.index') }}" class="group flex flex-col items-center space-y-4 no-underline">
@@ -224,7 +224,16 @@
                     <span class="font-bold text-lg text-indigo-900">Research</span>
                 </a>
 
-                
+                <!-- Button 7: Adda -->
+                <a href="#" class="group flex flex-col items-center space-y-4 no-underline">
+                    <div
+                        class="w-28 h-28 bg-red-600 rounded-full flex items-center justify-center text-white text-5xl shadow-lg transform transition-transform duration-300 hover:bg-blue-950 group-hover:scale-110 group-hover:shadow-xl">
+                        <i class="fa-solid fa-camera"></i> 
+                    </div>
+                    <span class="font-bold text-lg text-indigo-900">ADDA</span>
+                </a>
+
+
 
             </div>
         </div>
@@ -344,7 +353,7 @@
                     </div>
 
                 </div>
-                
+
                 <div>
                     <h3>Executive Director & CEO, AIIMS Deoghar</h3>
                     <p>Prof. (Dr.) Saurabh Varshney</p>
@@ -387,12 +396,13 @@
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-bold text-gray-900 border-b-2 border-red-500 pb-2">NOTICES</h2>
                     <a href="{{ route('notices.index') }}" class="text-blue-600 hover:text-blue-800 text-sm">Archive
-                    <i class="fas fa-external-link-alt"></i></a>
+                        <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="bg-white rounded-lg  shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
-                    
+
                     <div class="absolute w-full top-0 left-0 px-4">
-                        <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
+                        <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()"
+                            onmouseout="this.start()" behavior="scroll">
                             @foreach($notices as $notice)
                                 <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
                                     <div class="flex items-center text-gray-600 text-xs mb-1">
@@ -408,71 +418,73 @@
 
 
                     </div>
-                </div> 
-           </div>
-            
-        
+                </div>
+            </div>
 
-            
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <h2 class="text-xl font-bold text-gray-900 border-b-2  border-red-500 pb-2">LATEST JOBS</h2>
-                        <a href="{{ route('jobs.index') }}" class="text-blue-600 hover:text-blue-800 text-sm">Archive
+
+
+
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-gray-900 border-b-2  border-red-500 pb-2">LATEST JOBS</h2>
+                    <a href="{{ route('jobs.index') }}" class="text-blue-600 hover:text-blue-800 text-sm">Archive
                         <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
-                        <div class="absolute w-full top-0 left-0 px-4">
-                            <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
-                                @foreach($jobs as $job)
-                                    <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
-                                        <div class="flex items-center text-gray-600 text-xs mb-1">
-                                            <i class="far fa-calendar-alt mr-2"></i>
-                                            <span>{{ $job->application_end_date->format('M d, Y') }}</span>
-                                        </div>
-                                            <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $job->title }}</h3>
-                                            <a href="{{ route('jobs.show', $job) }}"
-                                            class="text-blue-500 hover:underline text-xs mt-1 block">View Details →</a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
+                    <div class="absolute w-full top-0 left-0 px-4">
+                        <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()"
+                            onmouseout="this.start()" behavior="scroll">
+                            @foreach($jobs as $job)
+                                <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
+                                    <div class="flex items-center text-gray-600 text-xs mb-1">
+                                        <i class="far fa-calendar-alt mr-2"></i>
+                                        <span>{{ $job->application_end_date->format('M d, Y') }}</span>
                                     </div>
+                                    <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $job->title }}</h3>
+                                    <a href="{{ route('jobs.show', $job) }}"
+                                        class="text-blue-500 hover:underline text-xs mt-1 block">View Details →</a>
+                                </div>
                             @endforeach
-                            </marquee>
-                        </div>
+                        </marquee>
                     </div>
                 </div>
-            
-        
-            
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                            <h2 class="text-xl font-bold text-gray-900 border-b-2 border-red-500 pb-2">EVENTS</h2>
-                            <a href="{{ route('events.index') }}" class="text-blue-600 hover:text-blue-800 text-sm">Archive
-                            <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                        <div class="bg-white rounded-lg shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
-                            <div class="absolute w-full top-0 left-0 px-4">
-                                <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
-                                    @foreach($events as $event)
-                                        <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
-                                            <div class="flex items-center text-gray-600 text-xs mb-1">
-                                                <i class="far fa-calendar-alt mr-2"></i>
-                                                <span>{{ $event->event_date->format('M d, Y') }}</span>
-                                            </div>
-                                                <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $event->title }}</h3>
-                                                <a href="{{ route('events.show', $event) }}"
-                                                class="text-blue-500 hover:underline text-xs mt-1 block">Read More →</a>
-                                        </div>
-                                    @endforeach
-                                </marquee>
+            </div>
 
-                            </div>
-                        </div>
+
+
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-gray-900 border-b-2 border-red-500 pb-2">EVENTS</h2>
+                    <a href="{{ route('events.index') }}" class="text-blue-600 hover:text-blue-800 text-sm">Archive
+                        <i class="fas fa-external-link-alt"></i></a>
                 </div>
+                <div class="bg-white rounded-lg shadow-md p-4 h-96 overflow-hidden relative border border-gray-200">
+                    <div class="absolute w-full top-0 left-0 px-4">
+                        <marquee direction="up" scrolldelay="50" scrollamount="4" truespeed="" onmouseover="this.stop()"
+                            onmouseout="this.start()" behavior="scroll">
+                            @foreach($events as $event)
+                                <div class="mb-4 pb-2 border-b border-gray-100 last:border-b-0">
+                                    <div class="flex items-center text-gray-600 text-xs mb-1">
+                                        <i class="far fa-calendar-alt mr-2"></i>
+                                        <span>{{ $event->event_date->format('M d, Y') }}</span>
+                                    </div>
+                                    <h3 class="text-sm font-medium text-gray-800 leading-tight">{{ $event->title }}</h3>
+                                    <a href="{{ route('events.show', $event) }}"
+                                        class="text-blue-500 hover:underline text-xs mt-1 block">Read More →</a>
+                                </div>
+                            @endforeach
+                        </marquee>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
 
-    </div> 
-</div>
+    </div>
+    </div>
 
-  
+
 
 
     <div class="scroll-container">
@@ -490,7 +502,7 @@
         </div>
     </div>
 
-        <!-- Statistics Section -->
+    <!-- Statistics Section -->
     {{-- <section class="py-16 bg-white-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Hospital Statistics</h2>
@@ -530,7 +542,8 @@
                         <div class="bg-white rounded-lg shadow-md p-6 notice-card">
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ $department->name }}</h3>
                             <p class="text-gray-600 text-sm mb-4">
-                                {{ \Illuminate\Support\Str::limit($department->description, 100) }}</p>
+                                {{ \Illuminate\Support\Str::limit($department->description, 100) }}
+                            </p>
                             @if($department->head_of_department)
                                 <p class="text-sm text-gray-500 mb-2">👨‍⚕️ {{ $department->head_of_department }}</p>
                             @endif
@@ -542,6 +555,5 @@
             </div>
         </section>
     @endif
-    @endsection
+@endsection
 </div>
-
