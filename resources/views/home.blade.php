@@ -225,7 +225,7 @@
                 </a>
 
                 <!-- Button 7: Adda -->
-                <a href="#" class="group flex flex-col items-center space-y-4 no-underline">
+                <a href="{{ route('adda') }}" class="group flex flex-col items-center space-y-4 no-underline">
                     <div
                         class="w-28 h-28 bg-red-600 rounded-full flex items-center justify-center text-white text-5xl shadow-lg transform transition-transform duration-300 hover:bg-blue-950 group-hover:scale-110 group-hover:shadow-xl">
                         <i class="fa-solid fa-camera"></i> 

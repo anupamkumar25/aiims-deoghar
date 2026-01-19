@@ -21,6 +21,7 @@
             <a href="{{ route('admin.jobs.index') }}" class="block px-3 py-2 hover:bg-gray-100 rounded">Jobs</a>
             <a href="{{ route('admin.departments.index') }}" class="block px-3 py-2 hover:bg-gray-100 rounded">Departments</a>
             <a href="{{ route('admin.gallery.index') }}" class="block px-3 py-2 hover:bg-gray-100 rounded">Gallery</a>
+            <a href="{{ route('admin.adda-options.index') }}" class="block px-3 py-2 hover:bg-gray-100 rounded">ADDA Options</a>
         </nav>
     </aside>
     <main class="col-span-12 md:col-span-9 lg:col-span-10">

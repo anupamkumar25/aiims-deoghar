@@ -16,9 +16,11 @@ use App\Http\Controllers\Admin\NoticeController as AdminNoticeController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\JobController as AdminJobController;
 use App\Http\Controllers\Admin\GalleryImageController as AdminGalleryController;
+use App\Http\Controllers\Admin\AddaOptionController as AdminAddaOptionController;
 use App\Http\Controllers\Admin\DepartmentController as AdminDepartmentController;
 use App\Http\Controllers\CourseController as AdminCourseController;
 use App\Http\Controllers\ProcurementController as AdminProcurementController;
+use App\Models\AddaOption;
 
 // Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -82,6 +84,12 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 // Search route
 Route::get('/search', function () { return view('search'); })->name('search');
 
+// Adda page
+Route::get('/adda', function () {
+    $options = AddaOption::where('is_active', true)->orderBy('sort_order')->get();
+    return view('adda', compact('options'));
+})->name('adda');
+
 require __DIR__.'/auth.php';
 
 // Admin dedicated login (always available to guests)
@@ -110,6 +118,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('jobs', AdminJobController::class)->names('jobs');
     // Gallery
     Route::resource('gallery', AdminGalleryController::class)->parameters(['gallery' => 'gallery'])->names('gallery');
+    // ADDA options
+    Route::resource('adda-options', AdminAddaOptionController::class)->parameters(['adda-options' => 'adda_option'])->names('adda-options');
     Route::resource('departments', AdminDepartmentController::class)->names('departments');
     Route::get('/courses', [AdminCourseController::class, 'index'])->name('courses.index');
     Route::get('/procurements', [AdminProcurementController::class, 'index'])->name('procurements.index');
